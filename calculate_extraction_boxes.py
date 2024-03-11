@@ -15,7 +15,7 @@ is_within_threshold = lambda diff: abs(diff) <= 1e-4
 closest = lambda target: min(good_boxsizes, key=lambda x: abs(x - target))
 previous_box = lambda value: good_boxsizes[good_boxsizes.index(value) - 1]
 
-def get_downsampled_ps(initial_pixel_size, target_box=downsample_to, target_df=1, return_extraction=False):
+def get_downsampled_ps(initial_pixel_size, target_box, target_df, return_extraction=False):
     target_dpx = target_df / initial_pixel_size
     ext_initial = np.floor(target_dpx * target_box)
 
